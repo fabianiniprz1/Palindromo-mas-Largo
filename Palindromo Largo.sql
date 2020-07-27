@@ -30,8 +30,7 @@ begin
 	begin
 
 		set @palabra_en_revision = SUBSTRING(@palabra_inversa,@inicio_uno,@contador_uno)
-		print @palabra_en_revision
-
+		
 			while(@inicio_dos<=@fin_uno)
 
 			begin
@@ -53,7 +52,7 @@ begin
 end
 
 
-select 'El palindromo más largo de la palabra '+ @palabra +' es: '+ palindromo
+select 'El palindromo mÃ¡s largo de la palabra '+ @palabra +' es: '+ palindromo
 from ##tmpPalin
 where longitud =  (select max(longitud) from ##tmpPalin)
 order by longitud desc
